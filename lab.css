@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: #fff;
+    position: relative;   
+    overflow: hidden;     
+}
+
+
+/* MAIN CARD */ 
+#Plate {
+    width: 320px;
+    height: 200px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ffc0cb, #ffb6c1);
+    border: 2px solid #ff4d94;
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.35);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    position: absolute;
+    overflow: hidden;
+    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+}
+
+/* TEXT */
+#Plate h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 22px;
+    color: #8b004b;
+}
+
+/* BUTTON GROUP */
+.btn-group {
+    display: flex;
+    gap: 18px;
+}
+
+/* CUTE BUTTONS */
+button {
+    padding: 14px 34px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    border: 2px solid #ff4d94;
+    background-color: #ff99c8;
+    color: white;
+    cursor: pointer;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* HEART DECOR ON BUTTON */
+button::before {
+    content: "♥";
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    font-size: 18px;
+    opacity: 0;
+    transition: all 0.25s ease;
+}
+
+/* HOVER EFFECT */
+button:hover {
+    background-color: #ff4d94;
+    transform: scale(1.15);
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.25);
+}
+
+button:hover::before {
+    top: 6px;
+    right: 6px;
+    opacity: 1;
+    color: #fff;
+}
+
+/* FLOATING HEARTS */
+#Plate::before,
+#Plate::after {
+    content: "❤";
+    position: absolute;
+    font-size: 26px;
+    color: #ff69b4;
+    opacity: 0.35;
+    animation: floatHearts 4.5s infinite ease-in-out;
+}
+
+#Plate::before {
+    top: 12px;
+    left: 20px;
+}
+
+#Plate::after {
+    bottom: 14px;
+    right: 26px;
+}
+
+@keyframes floatHearts {
+    0%   { transform: translateY(0) rotate(0deg); }
+    50%  { transform: translateY(-14px) rotate(15deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
